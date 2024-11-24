@@ -1,0 +1,268 @@
+/* ملف style.css */
+body {
+    font-family: 'Cairo', sans-serif;
+    background: linear-gradient(135deg, #42a5f5, #1e88e5); /* تدرج لوني */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+/* زخارف الخلفية */
+body::before,
+body::after {
+    content: "";
+    position: absolute;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    z-index: -1;
+    animation: float 6s infinite alternate ease-in-out;
+}
+
+body::before {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    left: -100px;
+}
+
+body::after {
+    width: 400px;
+    height: 400px;
+    bottom: -150px;
+    right: -150px;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(20px);
+    }
+}
+
+header {
+    background-color: #1e88e5;
+    color: white;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+main {
+    padding: 20px;
+}
+
+.selection {
+    margin: 20px auto;
+    max-width: 400px;
+    text-align: right;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* تنسيق القائمة المنسدلة */
+select {
+    padding: 10px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+select:hover {
+    border-color: #4CAF50;
+    background-color: #f9f9f9;
+}
+
+/* تنسيق الزر */
+button {
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #4CAF50, #2A3D66);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* التأثير عند المرور بالفأرة */
+button:hover {
+    background: linear-gradient(45deg, #66BB6A, #3C5A85);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* التأثير عند الضغط */
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.prayer-times {
+    margin-top: 30px;
+}
+
+.prayer-times ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.prayer-times li {
+    background: rgba(255, 255, 255, 0.8);
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    color: #1e88e5;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #1e88e5;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+.prayer-times li {
+    background: #f1f8e9;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    text-align: right;
+}
+
+.prayer-times li:nth-child(even) {
+    background: #e3f2fd;
+}
+.current-time {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #42a5f5;
+    padding: 5px 20px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-in-scroll {
+    animation: fadeInOnScroll 1.5s ease-out forwards;
+}
+
+@keyframes fadeInOnScroll {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+button {
+    transition: transform 0.2s ease-in-out;
+}
+
+button:active {
+    transform: scale(0.98); /* تصغير الزر عند الضغط */
+}
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 25px;
+    cursor: pointer;
+}
+.progress-bar-container {
+    width: 100%;
+    background-color: #f3f3f3;
+    height: 10px;
+    border-radius: 5px;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #42a5f5;
+    border-radius: 5px;
+    transition: width 0.3s ease-in-out;
+}
+.countdown {
+    background-color: #f7e7ce;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 400px;
+    text-align: center;
+}
+
+.countdown h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+#countdown-timer {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00ccff
+}
+

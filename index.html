@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.3.1/dist/aos.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أوقات الصلاة - تونس</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🕌 أوقات الصلاة</h1>
+        <p>اختر ولايتك ومعتمدية للحصول على أوقات الصلاة</p>
+    </header>
+    <main>
+        <section class="selection">
+            <label for="governorate">اختر ولايتك:</label>
+            <select id="governorate" onchange="updateDelegations()">
+                <option value="">اختر ولاية</option>
+                <option value="Tunis">تونس</option>
+                <option value="Ariana">أريانة</option>
+                <option value="Ben Arous">بن عروس</option>
+                <option value="Manouba">منوبة</option>
+                <option value="Nabeul">نابل</option>
+                <option value="Zaghouan">زغوان</option>
+                <option value="Bizerte">بنزرت</option>
+                <option value="Beja">باجة</option>
+                <option value="Jendouba">جندوبة</option>
+                <option value="Kef">الكاف</option>
+                <option value="Siliana">سليانة</option>
+                <option value="Sousse">سوسة</option>
+                <option value="Monastir">المنستير</option>
+                <option value="Mahdia">المهدية</option>
+                <option value="Sfax">صفاقس</option>
+                <option value="Kairouan">القيروان</option>
+                <option value="Kasserine">القصرين</option>
+                <option value="Sidi Bouzid">سيدي بوزيد</option>
+                <option value="Gabes">قابس</option>
+                <option value="Medenine">مدنين</option>
+                <option value="Tataouine">تطاوين</option>
+                <option value="Gafsa">قفصة</option>
+                <option value="Tozeur">توزر</option>
+                <option value="Kebili">قبلي</option>
+            </select>
+
+            <label for="delegation">اختر معتمدية:</label>
+            <select id="delegation">
+                <option value="">يرجى اختيار الولاية أولاً</option>
+            </select>
+
+            <button onclick="fetchPrayerTimes()">عرض الأوقات</button>
+        </section>
+
+        <section id="prayer-times" class="prayer-times">
+            <h2>أوقات الصلاة</h2>
+            <ul id="times-list">
+                <li>يرجى اختيار ولاية ومعتمدية.</li>
+            </ul>
+        </section>
+    </main>
+    <header>
+        <div id="current-time" class="current-time"></div>
+
+    </header>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>مرحبًا بك في موقعنا!</h2>
+            <p>شكرًا لزيارتك. نتمنى لك تجربة رائعة!</p>
+        </div>
+    </div>
+    
+    
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    <div data-aos="fade-up">
+        <h2>أوقات الصلاة</h2>
+    </div>
+    <div id="ramadan-countdown" class="countdown">
+    <h2>الوقت المتبقي حتى شهر رمضان</h2>
+    <p id="countdown-timer">جارٍ الحساب...</p>
+</div>
+
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
